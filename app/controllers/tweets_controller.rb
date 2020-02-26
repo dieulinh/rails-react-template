@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
   def index
   end
   def create
+    CreateRetweetService.new(params[:tweet]).create
   end
   def tweets
     today = Date.today.to_s
